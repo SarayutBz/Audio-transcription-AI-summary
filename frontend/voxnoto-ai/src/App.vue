@@ -25,7 +25,7 @@ async function uploadFile(e) {
 </script>
 
 <template>
-  
+
   <input type="file" @change="uploadFile" accept="audio/*" />
   <p v-if="result">Server Response: {{ result }}</p>
 
