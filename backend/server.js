@@ -36,6 +36,10 @@ app.get('/', (_req, res) => {
 })
 
 app.post('/upload', uploadLimiter, upload.single('audio'), async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: 'No audio file provided' })
+  }
+
   const file = req.file
   const ext = path.extname(file.originalname) || '.m4a'
   const s3Key = `audio/${Date.now()}${ext}`
