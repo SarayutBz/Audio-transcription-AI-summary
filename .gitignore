@@ -9,3 +9,7 @@ node_modules/
 # Build outputs
 dist/
 build/
+
+generate-doc.js
+NotoSansThai.ttf
+
