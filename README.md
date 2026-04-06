@@ -1,48 +1,36 @@
-# 🎙️ VoxNoto — Audio Transcription & AI Summary
+#  VoxNoto — Audio Transcription & AI Summary
 
 Web app สำหรับแปลงเสียงเป็นข้อความ และสรุปเนื้อหาด้วย AI  
 รองรับการอัดเสียงสดและอัปโหลดไฟล์เสียง ผลลัพธ์เป็นภาษาไทย
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
-```
-┌─────────────────────────────────────────────┐
-│              Vue 3 Frontend                 │
-│  Record / Upload Audio                      │
-│  SSE Progress: uploading → transcribing     │
-│               → summarizing → done          │
-└──────────────────┬──────────────────────────┘
-                   │ POST /upload (multipart)
-                   │ SSE stream response
-                   ▼
-┌─────────────────────────────────────────────┐
-│           Express.js Backend                │
-│                                             │
-│  1. Upload audio ──────────────► AWS S3     │
-│  2. Start job ─────────────────► AWS Transcribe (th-TH) │
-│  3. Poll until done ◄──────────── transcript JSON       │
-│  4. Summarize ─────────────────► Gemini AI  │
-│  5. Stream result ─────────────► Frontend   │
-└─────────────────────────────────────────────┘
-```
+<img width="885" height="838" alt="Image" src="https://github.com/user-attachments/assets/769dbc56-1548-4258-b771-bed077ab710d" />
 
 ---
 
-## ✨ Features
 
-- 🎤 **อัดเสียงสด** ผ่านไมค์ใน browser
-- 📁 **อัปโหลดไฟล์** เสียงทุกรูปแบบ (max 25MB)
-- 📝 **Transcription ภาษาไทย** ด้วย AWS Transcribe
-- ✨ **AI Summary** สรุปเป็น bullet points ด้วย Gemini
-- ⚡ **Real-time Progress** ผ่าน Server-Sent Events (SSE)
-- 🔒 **Rate Limiting** 5 requests / 15 นาที / IP
-- 📋 **Copy to Clipboard** ทั้ง transcript และ summary
+##  System Workflow
+
+<img width="661" height="5140" alt="Image" src="https://github.com/user-attachments/assets/0d53d536-9aff-458c-841a-cd8739901410" />
 
 ---
 
-## 🛠️ Tech Stack
+##  Features
+
+-  **อัดเสียงสด** ผ่านไมค์ใน browser
+-  **อัปโหลดไฟล์** เสียงทุกรูปแบบ (max 25MB)
+-  **Transcription ภาษาไทย** ด้วย AWS Transcribe
+-  **AI Summary** สรุปเป็น bullet points ด้วย Gemini
+-  **Real-time Progress** ผ่าน Server-Sent Events (SSE)
+-  **Rate Limiting** 5 requests / 15 นาที / IP
+-  **Copy to Clipboard** ทั้ง transcript และ summary
+
+---
+
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -57,7 +45,7 @@ Web app สำหรับแปลงเสียงเป็นข้อคว
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 voxnoto-ai/
@@ -78,7 +66,7 @@ voxnoto-ai/
 
 ---
 
-## 🚀 Setup
+##  Setup
 
 ### Backend
 
@@ -123,7 +111,7 @@ VITE_API_URL=http://localhost:3000
 
 ---
 
-## 🔄 How It Works
+##  How It Works
 
 ```
 1. User อัดเสียง / อัปโหลดไฟล์
@@ -145,7 +133,7 @@ VITE_API_URL=http://localhost:3000
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 cd backend
