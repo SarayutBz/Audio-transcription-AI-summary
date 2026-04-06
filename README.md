@@ -4,6 +4,14 @@ Web app สำหรับแปลงเสียงเป็นข้อคว
 รองรับการอัดเสียงสดและอัปโหลดไฟล์เสียง ผลลัพธ์เป็นภาษาไทย
 
 ---
+## Demo Video
+<div width="442" height="414">
+
+![brave_TpDkCN5OTH](https://github.com/user-attachments/assets/ee0b5d61-88e1-4d0e-95df-1905dcfb1275)
+    
+</div>
+
+
 
 ##  Architecture
 
